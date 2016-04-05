@@ -1,0 +1,42 @@
+form {
+  position: relative;
+  box-sizing: border-box;
+  border: 0.5px solid #333;
+
+  width  : 740px;
+  height : 498px;
+  margin : 0 auto;
+
+  background: #FFF 
+}
+
+.btn {
+  position     : relative;
+  /*left         : 440px;*/
+  top          : relative
+
+  padding      : 10px;
+
+  font         : bold sans-serif;
+  border       : 2px solid #333;
+  border-radius: 5px;
+  /*background   : none;*/
+
+  cursor       : pointer;
+
+
+    -ms-transform: rotate(-1.5deg);
+     -o-transform: rotate(-1.5deg);
+        /*transform: rotate(-1.5deg);*/
+}
+
+button:after {
+  content: " >>>";
+}
+
+button:hover,
+button:focus {
+  outline   : none;
+  background: #000;
+  color   : #FFF;
+}
