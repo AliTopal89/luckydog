@@ -3,7 +3,7 @@ require 'spec_helper'
 
 describe 'User system:' do
 
- context 'signup/login:' do
+ # context 'signup/login:' do
 
  	it 'should have no users registered initially.' do
  		expect(User.count).to eq(0)
@@ -16,9 +16,11 @@ describe 'User system:' do
     let(:user) {create(:user)}
 
     # it 'should have a single registered user.' do
-    #   expect(User.count).to eq(count+1)
+    # 	expect do
+    # 		User.create(email: "ali_t@gwmail.gwu.edu")
+    # 	end.to have(User.email).to eq(@current_user)
     # end
     
- end
+ # end
 
 end
