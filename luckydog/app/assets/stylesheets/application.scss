@@ -36,5 +36,33 @@
 }
 
 h2 {
-	padding-top: 1em;
+	padding-top: 2em;
+	position: relative;
+
 }
+
+header .intro-text {
+	margin-top:150px;
+	position: relative;
+	font-style: italic;
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 100px;;
+}
+
+/*.container {
+	 padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}*/
+
+header {
+	background-image:url("http://favoritedogwalkers.com/wp-content/themes/u-design/sliders/cycle/cycle3/images/dogwalkinganddogparkvisitla.jpg");
+	background-size: cover;
+	background-position: center center;
+	text-align: center;
+	color:cadetblue;
+	/*display: block;*/
+}
+
