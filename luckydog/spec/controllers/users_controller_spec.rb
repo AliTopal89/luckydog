@@ -18,7 +18,7 @@ RSpec.describe UsersController, type: :controller do
 			user1, user2 = User.create!, User.create!
 			get :index
 
-			expect(assigns(:users)).to match_array([user1,user2])
+			expect(assigns(:users)).to eq([user1, user2])
 		end
 	end
 
