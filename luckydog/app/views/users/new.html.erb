@@ -1,12 +1,19 @@
 <div class="container">
-	<h2>Sign Up!</h2>
+	<div class="content">
+		<div class="row">
+			<div class="login-form">
+			<h2>Sign Up!</h2>
+			<fieldset>
+			<%= form_for :user, url: '/users' do |f| %>
 
-	<%= form_for :user, url: '/users' do |f| %>
-
-		Name: <%= f.text_field :name, class: "form-control", placeholder: "name" %>
-		Email: <%= f.text_field :email, class: "form-control", placeholder: "e-mail" %>
-		Password: <%= f.password_field :password, class: "form-control", placeholder: "password" %>
-		Password Confirmation: <%= f.password_field :password_confirmation, class: "form-control", placeholder: "confirm password" %>
-		<%= f.submit "Submit", class: "btn btn-default" %>
-	<% end %>
+				Name: <%= f.text_field :name, class: "clearfix", placeholder: "name" %>
+				Email: <%= f.text_field :email, class: "clearfix", placeholder: "e-mail" %>
+				Password: <%= f.password_field :password, class: "clearfix", placeholder: "password" %>
+				Password Confirmation: <%= f.password_field :password_confirmation, class: "clearfix", placeholder: "confirm password" %>
+				<%= f.submit "Submit", class: "btn btn-default" %>
+			<% end %>
+			</fieldset>
+			</div>
+	 	</div>
+	</div>
 </div>

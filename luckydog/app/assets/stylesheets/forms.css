@@ -1,34 +1,38 @@
-form {
-  position: relative;
-  box-sizing: border-box;
-  border: 0.5px solid #333;
+/*html, body {
+  background-color: #eee;
+}*/
+body {
+  padding-top: 50px; 
+}
+/*.container {
+  margin-top: 
+  height: 100px;
+  width: 400px;
+}*/
 
-  width  : 740px;
-  height : 498px;
-  margin :2 auto;
-
-  background: 	#E8E8E8;
+/* The white background content wrapper */
+.container > .content {
+  width: 300px;
+  right: -112px
+  background-color: #fff;
+  padding: 30px;
+  margin: 45px 45px 45px 45px; 
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+     -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+     box-shadow: 0 30px 20px rgba(0,0,0,.15);
 }
 
-.btn {
-  position     : relative;
-  /*left         : 440px;*/
-  top          : relative
+.login-form {
+  margin-left: 55px;
+}
 
-  padding      : 10px;
-  margin       : 5px;
-
-  font         : bold sans-serif;
-  border       : 2px solid #333;
-  border-radius: 5px;
-  /*background   : none;*/
-
-  cursor       : pointer;
-
-
-    -ms-transform: rotate(-1.5deg);
-     -o-transform: rotate(-1.5deg);
-        /*transform: rotate(-1.5deg);*/
+legend {
+  margin-right: -50px;
+  font-weight: bold;
+  color: #404040;
 }
 
 button:after {
