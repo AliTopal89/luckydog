@@ -12,8 +12,9 @@ class SessionsController < ApplicationController
 			session[:user_id] = user.id
 			redirect_to '/'
 		else
+			flash[:danger] = 'Invalid email/password combination'
 			# If users login does not work, send thek back to where the login forms are
-			redirect_to '/login'
+			render 'new'
 		end
 	end
 
