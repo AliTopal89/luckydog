@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 	def create
 		user = User.new(user_params)
 		if user.save
-			session[:user_id] = user.id
+			cookies.permanent[:rememeber_me] = user.rememeber_me
 			redirect_to '/'
 		else
 			flash[:error] = "An error occured"
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 
 private
 	def user_params
-		params.require(:user).permit(:name, :email, :password, :password_confirmation)
+		params.require(:user).permit(:name, :email, :password, :password_confirmation, :rememeber_me)
 	end
 
 end
