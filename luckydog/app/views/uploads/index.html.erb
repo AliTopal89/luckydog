@@ -1,0 +1,6 @@
+<h2>your avatar</h2>
+<% @uploads.each do |upload| %>
+	<div>
+		<%= link_to upload.name, upload.url %>
+	</div>
+<% end %>
