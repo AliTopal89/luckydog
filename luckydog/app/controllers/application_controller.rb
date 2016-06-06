@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def current_user
-  	@current_user ||= User.find_by_rememeber_me(cookies[:rememeber_me]) if cookies[:rememeber_me]
+  	@current_user ||= User.find_by_remember_me(cookies[:remember_me]) if cookies[:remember_me]
   end
   helper_method :current_user
 

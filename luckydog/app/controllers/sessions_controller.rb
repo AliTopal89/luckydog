@@ -7,10 +7,10 @@ class SessionsController < ApplicationController
 		user = User.find_by(email: params[:session][:email].downcase)
 		# If user exists AND the password is correct
 		if user && user.authenticate(params[:session][:password])
-			if params[:rememeber_me]
-				cookies.permanent[:rememeber_me] = user.rememeber_me
+			if params[:remember_me]
+				cookies.permanent[:remember_me] = user.remember_me
 			else
-				cookies[:rememeber_me] = user.rememeber_me
+				cookies[:remember_me] = user.remember_me
 			end
 			# Save the user id inside the browser cookie. This is how we keep the user
 			# logged in when they navigate to around the luckydog site
@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
 	end
 
 	def destroy
-		cookies.delete(:rememeber_me)
+		cookies.delete(:remember_me)
 		redirect_to '/'
 	end
 
