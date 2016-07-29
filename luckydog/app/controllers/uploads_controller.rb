@@ -4,18 +4,30 @@ class UploadsController < ApplicationController
   end
 
   def create
+    # file_to_upload = params[:file]
+    # file_name = params[:file].original_filename
+    # bucket = S3.bucket(S3_BUCKET.name)
     # Make an object in your bucket for your upload
-    obj = S3_BUCKET.objects[params[:file].original_filename]
+    # obj = S3_BUCKET.objects[params[:file].original_filename]
 
-    # Upload the file
-    obj.write(
+    file_to_upload = params[:file]
+    file_name = params[:file].original_filename
+    bucket = S3.buckets(S3_BUCKET.name).object('key')
+
+    obj = buckets.obj(file_name)
+
+    # obj.put(
+    #   acl: 'public_read',
+    #   body: file_to_upload
+    #   )
+     obj.write(
       file: params[:file],
       acl: :public_read
-    )
+      )
 
     # Create an object for the upload
     @upload = Upload.new(
-            url: obj.public_url,
+        url: obj.public_url,
         name: obj.key
         )
 
