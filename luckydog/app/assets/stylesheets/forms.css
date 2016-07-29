@@ -1,14 +1,7 @@
-/*html, body {
-  background-color: #eee;
-}*/
+
 body {
   padding-top: 50px; 
 }
-/*.container {
-  margin-top: 
-  height: 100px;
-  width: 400px;
-}*/
 
 /* The white background content wrapper */
 .container > .content {
