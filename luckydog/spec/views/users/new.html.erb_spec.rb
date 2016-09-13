@@ -13,4 +13,8 @@ RSpec.describe "users/new" do
 		expect('<div class="row"</div>').to have_tag('div')
 		expect('<div class="col-md-6 col-md-offset-3">').to have_tag('div')
 	end
+
+	it 'renders user view' do
+		expect(controller.request.path_parameters[:action]).to eq("new")
+	end
 end
