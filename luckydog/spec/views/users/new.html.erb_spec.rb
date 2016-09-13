@@ -9,6 +9,8 @@ RSpec.describe "users/new" do
 		expect(view).to_not render_template(:index)
 	end
 	it 'has tags' do
-		expect('<div class="container"</div>').to have_tag('div') 
+		expect('<div class="container"</div>').to have_tag('div')
+		expect('<div class="row"</div>').to have_tag('div')
+		expect('<div class="col-md-6 col-md-offset-3">').to have_tag('div')
 	end
 end
