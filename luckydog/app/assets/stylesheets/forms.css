@@ -28,13 +28,26 @@ legend {
   color: #404040;
 }
 
-button:after {
+/*button:after {
   content: " >>>";
 }
-
+*/
 button:hover,
 button:focus {
   outline   : none;
   background: #000;
   color   : #FFF;
+}
+
+
+button#pw-toggle {
+  position: absolute;
+  border: none;
+  background: linear-gradient(to bottom, #006699, #2980b9);
+  border-radius: 2px;
+  padding: 7px 10px;
+  text-decoration: none;
+  margin-top: -2.4em;
+  margin-left: 28.9em;
+  -webkit-appearance: none;
 }
