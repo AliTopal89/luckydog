@@ -1,5 +1,5 @@
-var scripturl = "/assets/zxcvbn.js";
-
+// var scripturl = "/assets/zxcvbn.js";
+var matched = 0;
 function addStrength(z){
   const scale = {
     0: ['pw-very-weak', 'Very weak'],
@@ -16,7 +16,8 @@ function addStrength(z){
 }
 
 function addFeedback(z) {
-  if (!z || z.score > 2) return '';
+
+  // if (!z || z.score > 2) return '';
 
   const { warning, suggestions } = z.feedback;
   if (!warning && !suggestions.length) return '';
@@ -30,6 +31,34 @@ function analyzePswd() {
   const pswdTxt = document.getElementById('pswd-feedback');
   const pswdStrength = document.getElementById('pswd-strength-txt');
 
+  function matcher(z) {
+    const testing1 = 0;
+    const pass = document.querySelector('input[id="user_password"]');
+    pass.addEventListener('keyup', function(e) {
+      const strongRe = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+      const password = e.target.value;
+      console.log(password);
+      console.log("e is +" + password);
+      console.log ("in here " + strongRe.test(password) + " END");
+      
+      var matcher =  password.match(strongRe);
+       if (matcher) {
+        console.log(matcher);
+        // set the global variable
+        matched = 1;
+        testing1 ==  1;
+        console.log ("pass: " + matched + strongRe.test(password) + " END"); 
+      }
+      else {
+        matched = 0;
+        testing1 == 0;
+        console.log ("failed: " + matched + testing1);
+      }
+    
+    console.log("checking the score:  = " + z.score + "and the match" + matched);
+
+  });
+  }
   // the pw strength module is hidden by default ("hide" CSS class)
   // (so that javascript disabled browsers won't see it)
   // thus, first step is unhiding it
@@ -39,9 +68,21 @@ function analyzePswd() {
 
   input.addEventListener('keyup', function(e) {
     const z = zxcvbn(e.target.value);
-
+    const fallback = ['pw-na', 'None'];
     const [result, strength] = addStrength(z);
     const feedback = addFeedback(z);
+
+
+    matcher(z);
+
+    // if the password doens't meet our constraints, we don't want it to have
+    // a rating of great
+    console.log("score: " + z.score + "matched: " + matched);
+    if (!matched && z.score == 4)
+    {
+      z.score=3;
+      z.feedback.suggestion = "Please add minimum characters"
+    }
 
     if (pswdCntnr){
       pswdCntnr.className = result;
