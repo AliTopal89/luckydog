@@ -16,6 +16,7 @@
 //= require turbolinks
 //= require zxcvbn.js
 //= require pw-toggle.js
+//= require pw-strength.js
 //= require_tree .
 // var Acuity = require('acuityscheduling');
 
