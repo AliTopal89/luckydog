@@ -28,17 +28,12 @@ legend {
   color: #404040;
 }
 
-/*button:after {
-  content: " >>>";
-}
-*/
 button:hover,
 button:focus {
   outline   : none;
   background: #000;
   color   : #FFF;
 }
-
 
 button#pw-toggle {
   position: relative;
