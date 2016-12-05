@@ -41,13 +41,13 @@ button:focus {
 
 
 button#pw-toggle {
-  position: absolute;
+  position: relative;
   border: none;
   background: linear-gradient(to bottom, #006699, #2980b9);
   border-radius: 2px;
   padding: 7px 10px;
   text-decoration: none;
-  margin-top: -2.4em;
-  margin-left: 28.9em;
+  margin-top: -4.3195em;
+  margin-left: 90%;
   -webkit-appearance: none;
 }
