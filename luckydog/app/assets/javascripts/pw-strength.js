@@ -32,7 +32,6 @@ function analyzePswd() {
   const pswdStrength = document.getElementById('pswd-strength-txt');
 
   function matcher(z) {
-    const testing1 = 0;
     const pass = document.querySelector('input[id="user_password"]');
     pass.addEventListener('keyup', function(e) {
       const strongRe = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
@@ -46,16 +45,14 @@ function analyzePswd() {
         console.log(matcher);
         // set the global variable
         matched = 1;
-        testing1 ==  1;
-        console.log ("pass: " + matched + strongRe.test(password) + " END"); 
+       // console.log ("pass: " + matched + strongRe.test(password) + " END"); 
       }
       else {
         matched = 0;
-        testing1 == 0;
-        console.log ("failed: " + matched + testing1);
+        // console.log ("failed: " + matched + testing1);
       }
     
-    console.log("checking the score:  = " + z.score + "and the match" + matched);
+    // console.log("checking the score:  = " + z.score + "and the match" + matched);
 
   });
   }
@@ -77,11 +74,15 @@ function analyzePswd() {
 
     // if the password doens't meet our constraints, we don't want it to have
     // a rating of great
-    console.log("score: " + z.score + "matched: " + matched);
+    // console.log("score: " + z.score + "matched: " + matched);
     if (!matched && z.score == 4)
     {
       z.score=3;
-      z.feedback.suggestion = "Please add minimum characters"
+      z.feedback.suggestion = "Please add minimum characters";
+    }
+    if (matched && z.score ==3)
+    {
+      z.feedback.suggestions = "Godd strong password but you can make it stonger";
     }
 
     if (pswdCntnr){
