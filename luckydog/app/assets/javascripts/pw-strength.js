@@ -32,29 +32,23 @@ function analyzePswd() {
   const pswdStrength = document.getElementById('pswd-strength-txt');
 
   function matcher(z) {
-    const pass = document.querySelector('input[id="user_password"]');
-    pass.addEventListener('keyup', function(e) {
-      const strongRe = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
-      const password = e.target.value;
-      console.log(password);
-      console.log("e is +" + password);
-      console.log ("in here " + strongRe.test(password) + " END");
+    const strongRe = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+    const password = e.target.value;
+    console.log(password);
+    console.log("e is +" + password);
+    console.log ("in here " + strongRe.test(password) + " END");
       
-      var matcher =  password.match(strongRe);
-       if (matcher) {
+    var matcher =  password.match(strongRe);
+      if (matcher) {
         console.log(matcher);
         // set the global variable
         matched = 1;
-       // console.log ("pass: " + matched + strongRe.test(password) + " END"); 
+      // console.log ("pass: " + matched + strongRe.test(password) + " END"); 
       }
       else {
         matched = 0;
         // console.log ("failed: " + matched + testing1);
       }
-    
-    // console.log("checking the score:  = " + z.score + "and the match" + matched);
-
-  });
   }
   // the pw strength module is hidden by default ("hide" CSS class)
   // (so that javascript disabled browsers won't see it)
