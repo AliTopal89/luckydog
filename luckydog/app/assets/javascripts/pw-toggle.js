@@ -1,3 +1,4 @@
+$(document).ready(function(){
 $(function togglePswdConf(){
   $('input[id="user_password"], input[id="user_password_confirmation"').each(function(index, input){
     var $input = $(input);
@@ -23,3 +24,4 @@ $(function togglePswdConf(){
     }).insertAfter($input);
   });
 });
+})
