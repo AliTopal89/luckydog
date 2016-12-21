@@ -21,8 +21,8 @@ RSpec.describe UsersController, type: :controller do
 			FactoryGirl.create(:user) # or should be_valid.. 
 		end
 
-		let!(:user1) { FactoryGirl.create(:user, id: "1", name: 'user1', email: 'example@email.com', password: 'abc123', password_digest: 'abc123', created_at: Time.now, updated_at: Time.now, rememeber_me: 'secret')}
-		let!(:user2) { FactoryGirl.create(:user, id: "2", name: 'user2', email: 'exmaple@email.com', password: 'abc123', password_digest: 'abc123', created_at: Time.now, updated_at: Time.now, rememeber_me: 'secret')}
+		let!(:user1) { FactoryGirl.create(:user, id: "1", name: 'user1', email: 'example@email.com', password: 'abc123', password_digest: 'abc123', created_at: Time.now, updated_at: Time.now, remember_me: 'secret')}
+		let!(:user2) { FactoryGirl.create(:user, id: "2", name: 'user2', email: 'exmaple@email.com', password: 'abc123', password_digest: 'abc123', created_at: Time.now, updated_at: Time.now, remember_me: 'secret')}
 
 
 		it "loads all of the users into @users" do

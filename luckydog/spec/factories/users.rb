@@ -6,7 +6,7 @@ FactoryGirl.define do
     email "ali_t@gwmail.gwu.edu"
     password "secret"
     password_digest "secret"
-    rememeber_me 'secret'
+    remember_me 'secret'
     created_at Time.now	
     updated_at Time.now
  	# confirmed_at Time.now
