@@ -31,7 +31,7 @@ function analyzePswd() {
   const pswdTxt = document.getElementById('pswd-feedback');
   const pswdStrength = document.getElementById('pswd-strength-txt');
 
-  function matcher(z) {
+  function matcher(z, e) {
     const strongRe = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
     const password = e.target.value;
     console.log(password);
@@ -64,7 +64,7 @@ function analyzePswd() {
     const feedback = addFeedback(z);
 
 
-    matcher(z);
+    matcher(z, e);
 
     // if the password doens't meet our constraints, we don't want it to have
     // a rating of great
@@ -76,7 +76,7 @@ function analyzePswd() {
     }
     if (matched && z.score ==3)
     {
-      z.feedback.suggestions = "Godd strong password but you can make it stonger";
+      z.feedback.suggestions = "Good strong password but you can make it stonger";
     }
 
     if (pswdCntnr){
