@@ -36,6 +36,10 @@ Rails.application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+  # the default test environment (config/environments/test.rb) is not threadsafe. 
+  # If you experience random errors about missing constants, 
+  # add this below
+  config.allow_concurrency = false
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
