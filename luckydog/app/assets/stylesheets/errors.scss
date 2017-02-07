@@ -1,3 +1,27 @@
 // Place all the styles related to the errors controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.not_found {
+  position: absolute;
+  color: #00000;
+  background-image: url("http://4.bp.blogspot.com/_m4y8Qhoaejk/TCMaQzbHr9I/AAAAAAAAA8U/qrDp2KgBTIE/s1600/sad+dog.jpg");
+  height: 100%;
+  width: 100%;
+}
+
+h1 {
+	margin:45px;
+	position: relative;
+	top: 25%;
+	left: 35%;
+}
+
+p {
+	justify-content: center;
+	margin: 45px;
+	text-decoration: none;
+	font-size: 20px;
+	top: 25%;
+	left: 35%;
+	position: relative;
+}
