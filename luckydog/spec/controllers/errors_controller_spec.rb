@@ -13,7 +13,6 @@ RSpec.describe ErrorsController, type: :controller do
     it "returns http success" do
       get :internal_server_error
       expect(response.status).to eq(500)
-      expect(response).to have_http_status(:internal_server_error)
     end
   end
 
