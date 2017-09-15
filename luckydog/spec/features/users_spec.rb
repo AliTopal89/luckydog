@@ -21,4 +21,16 @@ RSpec.feature "Users", type: :feature do
 
   	expect(page).to have_content 'Signed in as Ali'
   end
+
+  scenario 'User can log out' do
+    visit '/signup'
+    signup
+
+    click_button 'Create my account'
+    expect(page).to have_content 'Logout'
+
+    click_link 'Logout', match: :first
+
+   expect(page).to_not have_content 'Signed in as Ali'
+  end
 end
