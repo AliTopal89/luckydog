@@ -7,7 +7,7 @@
 - Ruby 2.3
 - Rails 4.2.x
 - Postgres 9.4
-- You will also need Git, Ruby, Rails, and PostgreSQL
+- You will also need [Git](https://help.github.com/articles/set-up-git/)
 
 ### How to install:
 
