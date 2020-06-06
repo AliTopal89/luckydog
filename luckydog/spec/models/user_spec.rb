@@ -24,5 +24,20 @@ RSpec.describe User, type: :model do
       )
       expect(user).to be_valid
     end
+
+    it "is invalid with a duplicate email address" do
+      User.create(
+        name:  "Joe",
+        email:      "tester@example.com",
+        password:   "sw!tchBackTa1l",
+      )
+      user = User.new(
+        name:  "Jane",
+        email:      "tester@example.com",
+        password:   "sw!tchBackTa1l",
+      )
+      user.valid?
+      expect(user.errors[:email]).to include("has already been taken")
+    end
   end
 end
